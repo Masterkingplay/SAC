@@ -4,28 +4,27 @@ getgenv().SelectedOption = nil
 
 
 function doStuff()
-    if getgenv().SelectedOptions == "rara"then
+    if getgenv().SelectedOption == "rara"then
         local args = {
             "1"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOptions == "epica"then
+    elseif getgenv().SelectedOption == "epica"then
         local args = {
             "2"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOptions == "legendaria"then
+    elseif getgenv().SelectedOption == "legendaria"then
         local args = {
             "3"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOptions == "mitica"then
+    elseif getgenv().SelectedOption == "mitica"then
         local args = {
             "4"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
     end,,
-end
 
 local Window = Rayfield:CreateWindow({
     Name = "Opciones del menu",
@@ -459,11 +458,11 @@ end)
  local Dropdown = Tab:CreateDropdown({
     Name = "Pintura",
     Options = {"rara","epica","legendaria","mitica"},
-    CurrentOption = {"rara"},
+    CurrentOption = {"Option 1"},
     MultipleOptions = true,
-    Flag = "pintura",
+    Flag = "Dropdown1",
     Callback = function(Options)
-        getgenv.SelectedOptions = Option
+        getgenv.SelectedOption = Option
         doStuff()
     end,
  })
