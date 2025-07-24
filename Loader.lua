@@ -439,8 +439,7 @@ end)
 			getgenv().SelectedOption = nil
 
 			while getgenv().SelectedOption do
-
-				local args = {
+			local args = {
 	"1"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
