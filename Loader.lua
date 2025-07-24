@@ -436,12 +436,5 @@ end)
     MultipleOptions = true,
     Flag = "Tienda1",
     Callback = function(Options)
-			getgenv().SelectedOption = nil
-
-			while getgenv().SelectedOption do
-			local args = {
-	"1"
-}
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
     end,
  })
