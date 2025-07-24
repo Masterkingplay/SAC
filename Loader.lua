@@ -428,3 +428,20 @@ end)
  })
 
  local Tab = Window:CreateTab("Comprar", 4483362458)
+
+ local Dropdown = Tab:CreateDropdown({
+    Name = "Pinturas",
+    Options = {"Rara","Epica","Legendaria","Mitica"},
+    CurrentOption = {"Rara"},
+    MultipleOptions = false,
+    Flag = "Tienda1",
+    Callback = function(Options)
+        getgenv().SelectedOption = nil
+
+        if getgenv().SelectedOption == "Rara" do
+            local args = {
+                "1"
+            }
+            game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
+    end,
+ })
