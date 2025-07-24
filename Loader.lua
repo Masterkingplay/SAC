@@ -1,5 +1,32 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+getgenv().SelectedOption = nil
+
+
+function doStuff()
+    if getgenv().SelectedOption == "rara"then
+        local args = {
+            "1"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
+    elseif getgenv().SelectedOption == "epica"then
+        local args = {
+            "2"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
+    elseif getgenv().SelectedOption == "legendaria"then
+        local args = {
+            "3"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
+    elseif getgenv().SelectedOption == "mitica"then
+        local args = {
+            "4"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
+    end,,
+end
+
 local Window = Rayfield:CreateWindow({
     Name = "Opciones del menu",
     Icon = 0,
@@ -424,5 +451,19 @@ Toggle.MouseButton1Click:connect(function()
 		Status.TextColor3 = Color3.new(170,0,0)
 	end
 end)
+    end,
+ })
+
+ local Tab = Window:CreateTab("Comprar pintura", 4483362458)
+
+ local Dropdown = Tab:CreateDropdown({
+    Name = "Pintura",
+    Options = {"rara","epica","legendaria","mitica"},
+    CurrentOption = {"Option 1"},
+    MultipleOptions = true,
+    Flag = "Dropdown1",
+    Callback = function(Options)
+        getgenv.SelectedOption = Option
+        doStuff()
     end,
  })
