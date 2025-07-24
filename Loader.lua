@@ -178,7 +178,7 @@ end
     Callback = function()
         getgenv().farm = false 
 
-while getgenv ().farm do
+while getgenv().farm do
 task.wait()
 local args = {
 	"Earnings1"
@@ -432,9 +432,17 @@ end)
  local Dropdown = Tab:CreateDropdown({
     Name = "Pinturas",
     Options = {"Rara","Epica","Legendaria","Mitica"},
-    CurrentOption = {"None"},
+    CurrentOption = {"Rara"},
     MultipleOptions = true,
     Flag = "Tienda1",
     Callback = function(Options)
+			getgenv().SelectedOption = nil
+
+			while getgenv().SelectedOption do
+
+				local args = {
+	"1"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
     end,
  })
