@@ -24,7 +24,6 @@ function doStuff()
             "4"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    end,,
 
 local Window = Rayfield:CreateWindow({
     Name = "Opciones del menu",
