@@ -432,7 +432,7 @@ end)
  local Dropdown = Tab:CreateDropdown({
     Name = "Pinturas",
     Options = {"Rara","Epica","Legendaria","Mitica"},
-    CurrentOption = {"None"},
+    CurrentOption = {"Rara"},
     MultipleOptions = true,
     Flag = "Tienda1",
     Callback = function(Options)
