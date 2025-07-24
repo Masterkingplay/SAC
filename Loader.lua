@@ -4,22 +4,22 @@ getgenv().SelectedOption = nil
 
 
 function doStuff()
-    if getgenv().SelectedOption == "rara"then
+    if getgenv().SelectedOptions == "rara"then
         local args = {
             "1"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOption == "epica"then
+    elseif getgenv().SelectedOptions == "epica"then
         local args = {
             "2"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOption == "legendaria"then
+    elseif getgenv().SelectedOptions == "legendaria"then
         local args = {
             "3"
         }
         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("BuySkin"):FireServer(unpack(args))
-    elseif getgenv().SelectedOption == "mitica"then
+    elseif getgenv().SelectedOptions == "mitica"then
         local args = {
             "4"
         }
@@ -459,11 +459,11 @@ end)
  local Dropdown = Tab:CreateDropdown({
     Name = "Pintura",
     Options = {"rara","epica","legendaria","mitica"},
-    CurrentOption = {"Option 1"},
+    CurrentOption = {"rara"},
     MultipleOptions = true,
-    Flag = "Dropdown1",
+    Flag = "pintura",
     Callback = function(Options)
-        getgenv.SelectedOption = Option
+        getgenv.SelectedOptions = Option
         doStuff()
     end,
  })
